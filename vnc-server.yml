@@ -1,0 +1,26 @@
+# Install vnc server
+
+- hosts: mma97, mmb97
+  become: yes
+
+  tasks:
+    - name: Install xfce4 
+      apt:
+        name: xfce4
+        state: latest
+        install_recommends: no
+  
+  tasks:
+    - name: Install xfce4-goodies
+      apt:
+        name: xfce4-goodies
+        state: latest
+        install_recommends: no
+
+  tasks:
+    - name: Install tightvncserver  
+      apt:
+        name: tightvncserver
+        state: latest
+        install_recommends: no
+  

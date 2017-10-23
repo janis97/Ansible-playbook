@@ -1,0 +1,13 @@
+# prod.keys from janis to mma97
+
+- hosts: mma97
+  become: yes
+
+  tasks:
+    - name: Set authorized key took from file
+      authorized_key:
+        user: mma97  
+        state: present
+        key: "{{ lookup('file', '/home/janis/production/authentication/public_keys/prod.keys') }}"
+
+
